@@ -27,7 +27,7 @@ export class Chain {
   factoryAddress: string;
 
   @Field({
-    description: 'finds token address (solana mint)',
+    description: 'finds token address ',
   })
   findsAddress: string;
 

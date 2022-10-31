@@ -8,7 +8,7 @@ schema {
 type Chain {
     "story factory address"
     factoryAddress: String!
-    "finds token address (mint)"
+    "finds token address"
     findsAddress: String!
     "chain readable name"
     name: String!

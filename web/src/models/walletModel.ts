@@ -6,6 +6,9 @@ import {
   refreshToken,
 } from '@/utils/token';
 import { ChainType, WalletProvider, WalletType } from '@/wallets';
+import { KaikasWalletProvider } from '@/wallets/Kaikas';
+import { PhantomWalletProvider } from '@/wallets/Phantom';
+import { PlugWalletProvider } from '@/wallets/Plug';
 import { TempleWalletProvider } from '@/wallets/Temple';
 import { useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -92,7 +95,7 @@ export default () => {
     if (!chains || chains.length === 0) return [];
 
     const _chainWallets: ChainWallet[] = [];
-
+    
     const tezosChainInfo = chains.find((c) => c.type === ChainType.Tezos);
     tezosChainInfo &&
       _chainWallets.push({
@@ -228,6 +231,7 @@ export default () => {
           if (!wallet) {
             return '';
           }
+          
           const signature = await wallet.provider.signMessage(message);
           return await refreshToken(
             account,
@@ -236,6 +240,7 @@ export default () => {
             pubKey,
             signature,
           );
+        
         }
         return token;
       }

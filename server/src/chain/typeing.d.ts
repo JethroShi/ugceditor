@@ -1,12 +1,12 @@
 declare namespace Chain {
   interface ChainIntegration {
     /**
-     * chain identifier. eg. 'solana-devnet'
+     * chain identifier. 
      */
     chain: string;
 
     /**
-     * chain readable name. eg. 'Solana(Devnet)'
+     * chain readable name. 
      */
     name: string;
 
